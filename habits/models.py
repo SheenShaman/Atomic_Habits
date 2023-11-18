@@ -13,7 +13,7 @@ class Habit(models.Model):
     action = models.CharField(max_length=250, verbose_name=_('Action'))
 
     is_pleasant_habit = models.BooleanField(verbose_name=_('Is_pleasant_habit'), default=False, **NULLABLE)
-    associated_habit = models.ForeignKey('Pleasant_habit', on_delete=models.SET_NULL,
+    associated_habit = models.ForeignKey('self', on_delete=models.SET_NULL,
                                          verbose_name=_('Associated_habit'), **NULLABLE)
     frequency = models.PositiveIntegerField(default=1, verbose_name=_('Frequency'), **NULLABLE)
     reward = models.CharField(max_length=100, verbose_name=_('Reward'), **NULLABLE)
