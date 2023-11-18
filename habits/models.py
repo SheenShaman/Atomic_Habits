@@ -17,7 +17,7 @@ class Habit(models.Model):
                                          verbose_name=_('Associated_habit'), **NULLABLE)
     frequency = models.PositiveIntegerField(default=1, verbose_name=_('Frequency'), **NULLABLE)
     reward = models.CharField(max_length=100, verbose_name=_('Reward'), **NULLABLE)
-    time_to_completed = models.PositiveIntegerField(default=2, verbose_name=_('Time_to_completed'), **NULLABLE)
+    time_to_completed = models.PositiveIntegerField(default=120, verbose_name=_('Time_to_completed'), **NULLABLE)
     is_public = models.BooleanField(default=False, verbose_name=_('Is_public'))
 
     def __str__(self):
