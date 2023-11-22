@@ -11,13 +11,12 @@ class Habit(models.Model):
     place = models.CharField(max_length=100, verbose_name=_('Place'), **NULLABLE)
     time = models.TimeField(verbose_name=_('Time'), **NULLABLE)
     action = models.CharField(max_length=250, verbose_name=_('Action'))
-
     is_pleasant_habit = models.BooleanField(verbose_name=_('Is_pleasant_habit'), default=False, **NULLABLE)
     associated_habit = models.ForeignKey('self', on_delete=models.SET_NULL,
                                          verbose_name=_('Associated_habit'), **NULLABLE)
     frequency = models.PositiveIntegerField(default=1, verbose_name=_('Frequency (days)'), **NULLABLE)
     reward = models.CharField(max_length=100, verbose_name=_('Reward'), **NULLABLE)
-    time_to_completed = models.PositiveIntegerField(default=120, verbose_name=_('Time_to_completed (seconds)'),
+    time_to_completed = models.PositiveIntegerField(default=120, verbose_name=_('Time_to_completed(seconds)'),
                                                     **NULLABLE)
     is_public = models.BooleanField(default=False, verbose_name=_('Is_public'))
 
