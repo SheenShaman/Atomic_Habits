@@ -1,0 +1,19 @@
+import os
+from celery import shared_task
+from datetime import datetime, timedelta
+
+from habits.models import Habit
+from habits.services import send_message
+
+
+@shared_task
+def send_notification():
+    time_now = datetime.now()
+    habits = Habit.objects.all()
+    token = os.getenv('TELEGRAM_BOT_TOKEN')
+
+    for habit in habits:
+        if habit.time >= time_now - timedelta(minutes=15):
+            message = f"Напоминание о привычке {habit.action}" \
+                      f"После этого можно: {habit.associated_habit if habit.associated_habit else habit.reward}"
+            send_message(token=token, telegram_id=habit.user.telegram_id, message=message)
