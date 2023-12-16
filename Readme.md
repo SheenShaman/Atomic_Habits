@@ -14,8 +14,7 @@ Atomic Habits - это веб-приложение для отслеживани
 * psycopg2-binary 2.9.9
 * pillow 10.1.0
 * redis 5.0.1
-* Docker
-* 
+* Docker 24.0.6
 
 ## Установка:
 
