@@ -30,7 +30,7 @@ services:
   app:
     build: .
     tty: true
-    command: python mange.py migrate && python manage.py runserver 0.0.0.0:8000
+    command: sh -c "python mange.py migrate && python manage.py runserver 0.0.0.0:8000"
     ports:
       - "8000:8000"
     volumes:
