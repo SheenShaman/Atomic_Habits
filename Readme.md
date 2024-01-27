@@ -20,7 +20,7 @@ Atomic Habits - это веб-приложение для отслеживани
 
 Для установки и запуска проекта выполните следующие шаги:
 
-1. Склонируйте репозиторий проекта на свой локальный компьютер git clone _https://github.com/SheenShaman/habit_traker_
+1. Склонируйте репозиторий проекта на свой локальный компьютер git clone _https://github.com/SheenShaman/Atomic_Habits_
 2. Создайте виртуальное окружение **python3 -m venv venv**
 3. Активируйте виртуальное окружение **venv\Scripts\activate**
 4. Установите зависимости **pip install -r requirements.txt**
